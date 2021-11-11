@@ -102,6 +102,19 @@ public class MainDrive {
 
 //		맞춘 갯수가 correctCount에 확보됨. => 등수 판단.
 
+		if (correctCount == 6) {
+			System.out.println("1등!");
+		} else if (correctCount == 5) {
+//			임시 - 3등으로 처리
+			System.out.println("3등");
+		} else if (correctCount == 4) {
+			System.out.println("4등");
+		} else if (correctCount == 3) {
+			System.out.println("5등");
+		} else {
+			System.out.println("낙첨");
+		}
+
 	}
 
 }
