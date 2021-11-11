@@ -130,6 +130,40 @@ public class MainDrive {
 
 		}
 
+//		보너스번호도 추첨
+//		 1 ~ 45 랜덤 + 당첨번호와 중복 X
+
+		int bonusNum = 0;
+
+//		하나의 보너스 번호를 제대로 뽑을때까지 반복.
+
+		while (true) {
+
+//			1~45 숫자 랜덤.
+			int randomNum = (int) (Math.random() * 45 + 1);
+
+//			당첨번호 안에 이미 있는지?
+			boolean isDuplOk = true;
+
+			for (int winNum : winLottoNumbers) {
+
+				if (randomNum == winNum) {
+//					중복 발견! -> 중복검사 탈락!
+					isDuplOk = false;
+				}
+
+			}
+
+//			검사 결과 true -> 보너스번호로 사용해도 됨.
+			if (isDuplOk) {
+
+				bonusNum = randomNum;
+				break; // 보너스번호 추첨 종료
+
+			}
+
+		}
+
 //		몇등인지 판단. -> 몇개의 숫자가 같은가?
 
 		int correctCount = 0;
