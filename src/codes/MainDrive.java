@@ -22,8 +22,11 @@ public class MainDrive {
 
 //				제약조건 통과했는지? 검사.
 
-//				임시로 무조건 조건 통과라고 명시.
-				if (true) {
+//				검사 1. 1 ~ 45 범위 맞는가? 결과를 boolean으로 저장.
+				boolean isRangeOk = (1 <= inputNum) && (inputNum <= 45);
+
+//				임시로 범위 검사만 진행
+				if (isRangeOk) {
 
 //					써도 되는 숫자를 입력 했다.
 					myInputNumbers[i] = inputNum;
@@ -31,6 +34,8 @@ public class MainDrive {
 //					다음 숫자 받으러 가자. -> while 무한반복 종료.
 					break;
 
+				} else {
+					System.out.println("잘못된 숫자를 입력했습니다. 다시 입력해주세요.");
 				}
 
 			}
