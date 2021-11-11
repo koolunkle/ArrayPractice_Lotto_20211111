@@ -75,7 +75,41 @@ public class MainDrive {
 
 //		당첨번호 임시로 6개 숫자 직접 타이핑 (하드코딩) 
 
-		int[] winLottoNumbers = { 2, 13, 20, 30, 31, 41 };
+//		int[] winLottoNumbers = { 2, 13, 20, 30, 31, 41 };
+
+//		당첨 번호 6개를 랜덤으로 추출
+
+		int[] winLottoNumbers = new int[6];
+
+//		6개를 채워넣기 위한 for문
+
+		for (int i = 0; i < winLottoNumbers.length; i++) {
+
+//			써도 되는 숫자를 뽑을때까지 무한반복
+
+			while (true) {
+
+//				랜덤 숫자 추출 ->  1 ~ 45로 추출하면, 범위검사는 필요가 없다.
+//				랜덤 추출 : Math.random() * 45 + 1 =>  1.0 ~ 46.0 사이의 값이 랜덤으로 추출됨. -> 정수 변환 : 1 ~ 45 랜덤.
+
+				int randomNum = (int) (Math.random() * 45 + 1);
+
+				System.out.println("랜덤 숫자 : " + randomNum);
+
+//				임시 - 무조건 사용
+				if (true) {
+
+//					제대로 랜덤 추출 -> 당첨번호로 사용.
+					winLottoNumbers[i] = randomNum;
+
+//					다음 숫자 뽑으러 무한반복 탈출
+					break;
+
+				}
+
+			}
+
+		}
 
 //		몇등인지 판단. -> 몇개의 숫자가 같은가?
 
