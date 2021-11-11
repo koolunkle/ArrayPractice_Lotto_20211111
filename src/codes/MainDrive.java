@@ -96,8 +96,26 @@ public class MainDrive {
 
 				System.out.println("랜덤 숫자 : " + randomNum);
 
-//				임시 - 무조건 사용
-				if (true) {
+//				중복 검사 진행
+//				당첨 번호 배열에, 지금 만든 랜덤 숫자가 있다면? 중복 검사 탈락.
+
+				boolean isDuplOk = true;
+
+//				당첨번호 목록 조회
+				for (int winNum : winLottoNumbers) {
+
+					if (winNum == randomNum) {
+//						같은 숫자 발견 => 중복 발견 , 검사 탈락
+						isDuplOk = false;
+
+					}
+
+				}
+
+//				isDuplOk가 true로 남아있다? => 중복된 숫자가 없었다.
+
+//				중복검사 결과 활용
+				if (isDuplOk) {
 
 //					제대로 랜덤 추출 -> 당첨번호로 사용.
 					winLottoNumbers[i] = randomNum;
