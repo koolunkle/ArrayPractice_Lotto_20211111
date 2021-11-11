@@ -53,7 +53,18 @@ public class MainDrive {
 					break;
 
 				} else {
-					System.out.println("잘못된 숫자를 입력했습니다. 다시 입력해주세요.");
+
+//					왜 쓰면 안되는지? 경우별로 안내.
+
+//					범위 검사에 탈락?
+					if (!isRangeOk) {
+						System.out.println("1~45의 숫자만 입력 가능합니다.");
+					} else {
+//						범위 검사 통과? => 중복검사에 탈락.
+						System.out.println("이미 입력한 숫자입니다.");
+					}
+
+					System.out.println("다시 입력해주세요.");
 				}
 
 			}
